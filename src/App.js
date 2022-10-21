@@ -1,5 +1,4 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { AntDesign } from '@expo/vector-icons';
@@ -22,7 +21,8 @@ export default function App() {
             options={{
                 tabBarIcon: ({ color, size }) => (
                     <AntDesign name='unlock' color={color} size={size} />
-                )
+                ),
+                headerShown: false
             }}
         />
         <Tab.Screen
@@ -31,7 +31,8 @@ export default function App() {
             options={{
                 tabBarIcon: ({ color, size }) => (
                     <AntDesign name='plus' color={color} size={size} />
-                )
+                ),
+                headerShown: false
             }}
         />
         <Tab.Screen
@@ -40,7 +41,8 @@ export default function App() {
             options={{
                 tabBarIcon: ({ color, size }) => (
                     <AntDesign name='setting' color={color} size={size} />
-                )
+                ),
+                headerShown: false
             }}
         />
       </Tab.Navigator>
@@ -48,9 +50,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        backgroundColor: '#00f',
-    }
-});

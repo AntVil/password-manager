@@ -1,18 +1,17 @@
-import { StyleSheet, Image, Text, View } from 'react-native';
-import { Dimensions } from 'react-native';
+import { StyleSheet, Image, Text, View, Dimensions } from 'react-native';
 
 export default function PasswordListItem(props) {
-  return (
-    <View style={styles.item}>
-        <Image
-            style={styles.icon}
-            source={{
-                uri: 'https://reactnative.dev/img/tiny_logo.png',
-            }}
-        />
-        <Text style={styles.text}>{props.children}</Text>
-    </View>
-  );
+    return (
+        <View style={styles.item}>
+            <Image
+                style={styles.icon}
+                source={{
+                    uri: 'https://reactnative.dev/img/tiny_logo.png'
+                }}
+            />
+            <Text style={styles.text}>{props.children}</Text>
+        </View>
+    );
 }
 
 const ICON_SIZE = 50;
