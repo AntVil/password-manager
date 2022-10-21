@@ -1,8 +1,13 @@
-import { StyleSheet, Image, Text, View, Dimensions } from 'react-native';
+import { StyleSheet, Image, Text, Dimensions, Pressable } from 'react-native';
+
+const ICON_SIZE = 50;
+const ITEM_HORIZONTAL_PADDING = 30;
+const ITEM_VERTICAL_PADDING = 5;
+const WINDOW_WIDTH = Dimensions.get('window').width;
 
 export default function PasswordListItem(props) {
     return (
-        <View style={styles.item}>
+        <Pressable style={styles.item} onPress={() => props.navigation.navigate('Password')}>
             <Image
                 style={styles.icon}
                 source={{
@@ -10,14 +15,9 @@ export default function PasswordListItem(props) {
                 }}
             />
             <Text style={styles.text}>{props.children}</Text>
-        </View>
+        </Pressable>
     );
 }
-
-const ICON_SIZE = 50;
-const ITEM_HORIZONTAL_PADDING = 30;
-const ITEM_VERTICAL_PADDING = 5;
-const WINDOW_WIDTH = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
     item: {
