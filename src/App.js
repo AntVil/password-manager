@@ -14,7 +14,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        tabBarOptions={{showLabel: false}}
+        screenOptions={{tabBarShowLabel: false}}
       >
         <Tab.Screen
             name='Passwords'
