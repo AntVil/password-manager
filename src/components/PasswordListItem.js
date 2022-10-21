@@ -1,8 +1,11 @@
 import { StyleSheet, Image, Text, Dimensions, Pressable } from 'react-native';
 
 const ICON_SIZE = 50;
-const ITEM_HORIZONTAL_PADDING = 30;
-const ITEM_VERTICAL_PADDING = 5;
+const ITEM_HORIZONTAL_MARGIN = 30;
+const ITEM_VERTICAL_MARGIN = 5;
+const LABEL_SIZE = 50;
+const LABEL_HORIZONTAL_MARGIN = 10;
+
 const WINDOW_WIDTH = Dimensions.get('window').width;
 
 export default function PasswordListItem(props) {
@@ -14,7 +17,10 @@ export default function PasswordListItem(props) {
                     uri: 'https://reactnative.dev/img/tiny_logo.png'
                 }}
             />
-            <Text style={styles.text}>{props.children}</Text>
+            
+            <Text numberOfLines={1} style={styles.title}>{props.children}</Text>
+            
+            <Text numberOfLines={1} style={styles.label}>{props.label}</Text>
         </Pressable>
     );
 }
@@ -24,16 +30,20 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        height: ICON_SIZE + 2 * ITEM_VERTICAL_PADDING
+        height: ICON_SIZE + 2 * ITEM_VERTICAL_MARGIN
     },
     icon: {
         width: ICON_SIZE,
         height: ICON_SIZE,
         borderRadius: ICON_SIZE / 2
     },
-    text: {
-        width: (WINDOW_WIDTH - ICON_SIZE) - 2 * ITEM_HORIZONTAL_PADDING,
+    title: {
+        width: (WINDOW_WIDTH - ICON_SIZE - LABEL_SIZE) - 2 * ITEM_HORIZONTAL_MARGIN - 2 * LABEL_HORIZONTAL_MARGIN,
         textAlign: 'center',
         fontSize: 16
+    },
+    label: {
+        width: LABEL_SIZE,
+        marginVertical: LABEL_HORIZONTAL_MARGIN
     }
 });

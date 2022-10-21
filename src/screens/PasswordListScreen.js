@@ -8,9 +8,9 @@ const WINDOW_WIDTH = Dimensions.get('window').width;
 const SORTER_MARGIN = 10;
 const SORTER_WIDTH = 100;
 const passwords = [
-    { id: 0, name: 'Item 0' },
-    { id: 1, name: 'Item 1' },
-    { id: 2, name: 'The very long item 2' }
+    { id: 0, name: 'Item 0', label: 'label 0' },
+    { id: 1, name: 'Item 1', label: 'label 1' },
+    { id: 2, name: 'The very long item 2', label: 'very long label' }
 ];
 
 export default function PasswordListScreen(props) {

@@ -7,7 +7,7 @@ export default function PasswordList(props) {
             style={styles.list}
             data={props.passwords}
             renderItem={({ item }) => (
-                <PasswordListItem key={item.id} navigation={props.navigation}>{item.name}</PasswordListItem>
+                <PasswordListItem key={item.id} navigation={props.navigation} label={item.label}>{item.name}</PasswordListItem>
             )}
             ItemSeparatorComponent={() => (
                 <View
