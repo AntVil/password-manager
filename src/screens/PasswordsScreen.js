@@ -14,17 +14,17 @@ export default function PasswordsScreen() {
         >
             <Stack.Navigator>
                 <Stack.Screen
-                    name="List"
+                    name='List'
                     component={PasswordListScreen}
                     options={{ headerShown: false }}
                 />
                 <Stack.Screen
-                    name="Password"
+                    name='Password'
                     component={PasswordScreen}
                     options={{ headerShown: false }}
                 />
                 <Stack.Screen
-                    name="Edit"
+                    name='Edit'
                     component={PasswordEditScreen}
                     options={{ headerShown: false }}
                 />

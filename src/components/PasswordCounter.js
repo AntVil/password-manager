@@ -10,7 +10,7 @@ export default function PasswordCounter(props) {
     return (
         <View style={styles.container}>
             <Pressable onPress={() => setCount(Math.max(count - 1, 0))}>
-                <AntDesign name="minuscircleo" size={40} color="black" />
+                <AntDesign name='minuscircleo' size={40} color='black' />
             </Pressable>
             
             <View style={styles.counterContainer}>
@@ -18,7 +18,7 @@ export default function PasswordCounter(props) {
             </View>
 
             <Pressable onPress={() => setCount(count + 1)}>
-                <AntDesign name="pluscircleo" size={40} color="black" />
+                <AntDesign name='pluscircleo' size={40} color='black' />
             </Pressable>
         </View>
     );

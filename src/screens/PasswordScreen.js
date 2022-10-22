@@ -15,13 +15,13 @@ export default function PasswordScreen(props) {
         <View style={styles.root}>
             <View style={styles.topContainer}>
                 <Pressable onPress={() => props.navigation.goBack()}>
-                    <AntDesign name="arrowleft" size={40} color="#000" />
+                    <AntDesign name='arrowleft' size={40} color='#000' />
                 </Pressable>
 
                 <PasswordInfo></PasswordInfo>
 
-                <Pressable onPress={() => props.navigation.navigate("Edit")}>
-                    <AntDesign name="edit" size={40} color="#000" />
+                <Pressable onPress={() => props.navigation.navigate('Edit')}>
+                    <AntDesign name='edit' size={40} color='#000' />
                 </Pressable>
             </View>
             

@@ -7,8 +7,8 @@ const BUTTON_SIZE = WINDOW_WIDTH * 2 / 3;
 export default function PasswordGenerator(props) {
     return (
         <View style={styles.container}>
-            <Pressable style={styles.button} onPress={() => console.log("generatePassword")}>
-                <AntDesign name="unlock" size={BUTTON_SIZE * 2 / 3} color="#000" />
+            <Pressable style={styles.button} onPress={() => console.log('generatePassword')}>
+                <AntDesign name='unlock' size={BUTTON_SIZE * 2 / 3} color='#000' />
             </Pressable>
         </View>
     );

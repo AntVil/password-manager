@@ -32,7 +32,7 @@ export default function PasswordListScreen(props) {
 const styles = StyleSheet.create({
     header: {
         flexDirection: 'row',
-        width: "100%",
+        width: '100%',
         backgroundColor: '#FFF',
         paddingTop: Constants.statusBarHeight,
         paddingBottom: 10
