@@ -7,7 +7,7 @@ import PasswordsScreen from './screens/PasswordsScreen';
 import AddPasswordScreen from './screens/AddPasswordScreen';
 import SettingsScreen from './screens/SettingsScreen';
 
-const TAB_BAR_HEIGHT = 100;
+import { TAB_BAR_HEIGHT } from './constants'
 
 const Tab = createBottomTabNavigator();
 
