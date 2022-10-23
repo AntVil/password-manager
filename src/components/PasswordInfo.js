@@ -1,9 +1,11 @@
-import { Text, Image, StyleSheet, Dimensions, View } from 'react-native';
+import { Text, Image, StyleSheet, Dimensions, View, useColorScheme } from 'react-native';
 
 const WINDOW_WIDTH = Dimensions.get('window').width;
 const ICON_SIZE = WINDOW_WIDTH / 2;
 
 export default function PasswordInfo(props) {
+    const theme = useColorScheme();
+
     return (
         <View style={styles.container}>
             <Image

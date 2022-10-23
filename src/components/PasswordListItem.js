@@ -1,4 +1,4 @@
-import { StyleSheet, Image, Text, Dimensions, Pressable } from 'react-native';
+import { StyleSheet, Image, Text, Dimensions, Pressable, useColorScheme } from 'react-native';
 
 const ICON_SIZE = 50;
 const ITEM_HORIZONTAL_MARGIN = 30;
@@ -9,6 +9,8 @@ const LABEL_HORIZONTAL_MARGIN = 10;
 const WINDOW_WIDTH = Dimensions.get('window').width;
 
 export default function PasswordListItem(props) {
+    const theme = useColorScheme();
+
     return (
         <Pressable style={styles.item} onPress={() => props.navigation.navigate('Password')}>
             <Image

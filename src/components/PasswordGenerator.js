@@ -1,10 +1,12 @@
-import { Pressable, StyleSheet, Dimensions, View } from 'react-native';
+import { Pressable, StyleSheet, Dimensions, View, useColorScheme } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
 const WINDOW_WIDTH = Dimensions.get('window').width;
 const BUTTON_SIZE = WINDOW_WIDTH * 2 / 3;
 
 export default function PasswordGenerator(props) {
+    const theme = useColorScheme();
+
     return (
         <View style={styles.container}>
             <Pressable style={styles.button} onPress={() => console.log('generatePassword')}>

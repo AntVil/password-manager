@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, useColorScheme } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 
 export default function PasswordListSorter(props){
+    const theme = useColorScheme();
+
     const ITEMS = [
         { label: 'sort name', value: 'name' },
         { label: 'sort label', value: 'label' }

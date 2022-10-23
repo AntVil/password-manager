@@ -1,7 +1,9 @@
-import { FlatList, StyleSheet, View } from 'react-native';
+import { FlatList, StyleSheet, View, useColorScheme } from 'react-native';
 import PasswordListItem from './PasswordListItem';
 
 export default function PasswordList(props) {
+    const theme = useColorScheme();
+
     return (
         <FlatList
             style={styles.list}

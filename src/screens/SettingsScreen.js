@@ -1,10 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, useColorScheme } from 'react-native';
 import Constants from 'expo-constants';
 
+import { THEME_COLOR_0, THEME_COLOR_1 } from '../constants';
+
 export default function SettingsScreen() {
+    const theme = useColorScheme();
+
     return (
-        <View style={styles.container}>
-            <View style={styles.header}>
+        <View style={{...styles.root, backgroundColor: THEME_COLOR_1[theme]}}>
+            <View style={{...styles.header, backgroundColor: THEME_COLOR_0[theme]}}>
                 <Text style={styles.titleText}>Settings</Text>
             </View>
 
@@ -27,7 +31,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         paddingVertical: 8
     },
-    container: {
+    root: {
         flex: 1,
         justifyContent: 'flex-start',
         alignItems: 'center'

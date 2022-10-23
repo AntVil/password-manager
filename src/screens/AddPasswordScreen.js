@@ -1,15 +1,17 @@
-import { StyleSheet, View, Dimensions } from 'react-native';
+import { StyleSheet, View, Dimensions, useColorScheme } from 'react-native';
 import Constants from 'expo-constants';
 
 import PasswordInfo from '../components/PasswordInfo';
 import CreatePassword from '../components/CreatePassword';
+import { THEME_COLOR_0, THEME_COLOR_1 } from '../constants';
 
-import { TAB_BAR_HEIGHT } from '../constants';
 const WINDOW_HEIGHT = Dimensions.get('window').height;
 
 export default function AddPasswordScreen(props) {
+    const theme = useColorScheme();
+
     return (
-        <View style={styles.root}>
+        <View style={{...styles.root, backgroundColor: THEME_COLOR_1[theme]}}>
             <PasswordInfo></PasswordInfo>
             
             <CreatePassword style={styles.button}></CreatePassword>
@@ -19,10 +21,10 @@ export default function AddPasswordScreen(props) {
 
 const styles = StyleSheet.create({
     root: {
-        marginTop: Constants.statusBarHeight,
+        paddingTop: Constants.statusBarHeight,
         flexDirection: 'column',
         justifyContent: 'space-between',
-        height: WINDOW_HEIGHT - Constants.statusBarHeight - TAB_BAR_HEIGHT
+        height: WINDOW_HEIGHT - Constants.statusBarHeight
     },
     button: {
         flex: 1,

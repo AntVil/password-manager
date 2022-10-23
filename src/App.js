@@ -1,4 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
+import { useColorScheme } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { AntDesign } from '@expo/vector-icons';
@@ -7,15 +8,26 @@ import PasswordsScreen from './screens/PasswordsScreen';
 import AddPasswordScreen from './screens/AddPasswordScreen';
 import SettingsScreen from './screens/SettingsScreen';
 
-import { TAB_BAR_HEIGHT } from './constants'
+import { TAB_BAR_HEIGHT, THEME_COLOR_0, THEME_COLOR_4, FONT_COLOR } from './constants'
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
+    const theme = useColorScheme();
+
     return (
         <NavigationContainer>
             <Tab.Navigator
-                screenOptions={{tabBarShowLabel: false}}
+                screenOptions={{
+                    tabBarShowLabel: false,
+                    tabBarActiveTintColor: THEME_COLOR_4[theme],
+                    tabBarInactiveTintColor: FONT_COLOR[theme],
+                    tabBarStyle: {
+                        backgroundColor: THEME_COLOR_0[theme],
+                        height: TAB_BAR_HEIGHT,
+                        borderTopColor: 'transparent'
+                    }
+                }}
             >
                 <Tab.Screen
                     name='Passwords'
@@ -24,8 +36,7 @@ export default function App() {
                         tabBarIcon: ({ color, size }) => (
                             <AntDesign name='unlock' color={color} size={size} />
                         ),
-                        headerShown: false,
-                        tabBarStyle: { height: TAB_BAR_HEIGHT }
+                        headerShown: false
                     }}
                 />
                 <Tab.Screen
@@ -35,8 +46,7 @@ export default function App() {
                         tabBarIcon: ({ color, size }) => (
                             <AntDesign name='plus' color={color} size={size} />
                         ),
-                        headerShown: false,
-                        tabBarStyle: { height: TAB_BAR_HEIGHT }
+                        headerShown: false
                     }}
                 />
                 <Tab.Screen
@@ -46,8 +56,7 @@ export default function App() {
                         tabBarIcon: ({ color, size }) => (
                             <AntDesign name='setting' color={color} size={size} />
                         ),
-                        headerShown: false,
-                        tabBarStyle: { height: TAB_BAR_HEIGHT }
+                        headerShown: false
                     }}
                 />
             </Tab.Navigator>

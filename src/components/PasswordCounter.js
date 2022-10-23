@@ -1,10 +1,12 @@
 import { useState } from 'react';
-import { Text, Pressable, StyleSheet, View, Dimensions } from 'react-native';
+import { Text, Pressable, StyleSheet, View, Dimensions, useColorScheme } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
 const WINDOW_WIDTH = Dimensions.get('window').width;
 
 export default function PasswordCounter(props) {
+    const theme = useColorScheme();
+
     const [count, setCount] = useState(0);
 
     return (

@@ -1,8 +1,10 @@
-import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, useColorScheme } from 'react-native';
 import Constants from 'expo-constants';
 
 import PasswordList from '../components/PasswordList';
 import PasswordListSorter from '../components/PasswordListSorter';
+
+import { THEME_COLOR_0, THEME_COLOR_1 } from '../constants';
 
 const WINDOW_WIDTH = Dimensions.get('window').width;
 const SORTER_MARGIN = 10;
@@ -14,9 +16,11 @@ const passwords = [
 ];
 
 export default function PasswordListScreen(props) {
+    const theme = useColorScheme();
+
     return (
-        <View style={styles.container}>
-            <View style={styles.header}>
+        <View style={{...styles.root, backgroundColor: THEME_COLOR_1[theme]}}>
+            <View style={{...styles.header, backgroundColor: THEME_COLOR_0[theme]}}>
                 <PasswordListSorter style={styles.sorter}></PasswordListSorter>
 
                 <View style={styles.title}>
@@ -52,7 +56,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         paddingVertical: 8
     },
-    container: {
+    root: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'

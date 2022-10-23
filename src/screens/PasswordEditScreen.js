@@ -1,18 +1,20 @@
-import { StyleSheet, View, Dimensions, Pressable } from 'react-native';
+import { StyleSheet, View, Dimensions, Pressable, useColorScheme } from 'react-native';
 import Constants from 'expo-constants';
 import { AntDesign } from '@expo/vector-icons';
 
 import PasswordInfo from '../components/PasswordInfo';
 import PasswordSettings from '../components/PasswordSettings';
 
-import { TAB_BAR_HEIGHT } from '../constants';
+import { THEME_COLOR_0, THEME_COLOR_1 } from '../constants';
 
 const WINDOW_HEIGHT = Dimensions.get('window').height;
 
 export default function PasswordEditScreen(props) {
+    const theme = useColorScheme();
+
     return (
-        <View style={styles.root}>
-            <View style={styles.topContainer}>
+        <View style={{...styles.root, backgroundColor: THEME_COLOR_1[theme]}}>
+            <View style={{...styles.topContainer, backgroundColor: THEME_COLOR_0[theme]}}>
                 <Pressable onPress={() => props.navigation.goBack()}>
                     <AntDesign name='arrowleft' size={40} color='#000' />
                 </Pressable>
@@ -31,10 +33,10 @@ export default function PasswordEditScreen(props) {
 
 const styles = StyleSheet.create({
     root: {
-        marginTop: Constants.statusBarHeight,
+        paddingTop: Constants.statusBarHeight,
         flexDirection: 'column',
         justifyContent: 'flex-start',
-        height: WINDOW_HEIGHT - Constants.statusBarHeight - TAB_BAR_HEIGHT
+        height: WINDOW_HEIGHT - Constants.statusBarHeight
     },
     topContainer: {
         flexDirection: 'row',

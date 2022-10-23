@@ -1,10 +1,12 @@
-import { Text, StyleSheet, Dimensions, View } from 'react-native';
+import { Text, StyleSheet, Dimensions, View, useColorScheme } from 'react-native';
 
 const WINDOW_WIDTH = Dimensions.get('window').width;
 const CELL_WIDTH = WINDOW_WIDTH / 3;
 const GRID_HORIZONTAL_MARGIN = WINDOW_WIDTH / 10;
 
 export default function PasswordSettings(props) {
+    const theme = useColorScheme();
+
     return (
         <View style={styles.container}>
             <Text style={styles.cell}>Settings</Text>
