@@ -36,6 +36,7 @@ export default function PasswordScreen(props) {
 
 const styles = StyleSheet.create({
     root: {
+        flex:1,
         paddingTop: Constants.statusBarHeight,
         flexDirection: 'column',
         justifyContent: 'space-between',

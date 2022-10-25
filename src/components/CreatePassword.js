@@ -2,7 +2,7 @@ import { Pressable, StyleSheet, Dimensions, View, useColorScheme } from 'react-n
 import { AntDesign } from '@expo/vector-icons';
 
 const WINDOW_WIDTH = Dimensions.get('window').width;
-const BUTTON_SIZE = WINDOW_WIDTH * 2 / 3;
+const BUTTON_SIZE = WINDOW_WIDTH / 2;
 
 export default function CreatePassword(props) {
     const theme = useColorScheme();
