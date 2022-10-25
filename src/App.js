@@ -1,3 +1,4 @@
+import { StatusBar } from 'expo-status-bar';
 import { useColorScheme } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -28,6 +29,7 @@ export default function App() {
                     options={{ headerShown: false }}
                 />
             </Stack.Navigator>
+            <StatusBar></StatusBar>
         </NavigationContainer>
     );
 }

@@ -22,6 +22,7 @@ export default function PasswordListSorter(props){
                 value={sorting}
                 style={styles.select}
                 placeholder={{ }}
+                useNativeAndroidPickerStyle={false}
             />
         </View>
     );
@@ -46,8 +47,10 @@ const styles = StyleSheet.create({
             textAlign: 'center'
         },
         inputAndroid: {
-            color: 'white',
-            textAlign: 'center'
+            color: '#000',
+            textAlign: 'center',
+            paddingTop: 8,
+            paddingBottom: 8,
         }
     }
 });
