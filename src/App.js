@@ -1,66 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import { useColorScheme } from 'react-native';
+import { useColorScheme } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { AntDesign } from '@expo/vector-icons';
+import { createStackNavigator } from '@react-navigation/stack';
 
-import PasswordsScreen from './screens/PasswordsScreen';
-import AddPasswordScreen from './screens/AddPasswordScreen';
-import SettingsScreen from './screens/SettingsScreen';
+import LoginScreen from './screens/LoginScreen';
+import MainScreen from './screens/MainScreen';
 
-import { TAB_BAR_HEIGHT, THEME_COLOR_0, THEME_COLOR_4, FONT_COLOR } from './constants'
+import { THEME_COLOR_0, THEME_COLOR_1 } from './constants';
 
-const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 export default function App() {
     const theme = useColorScheme();
 
     return (
-        <NavigationContainer>
-            <Tab.Navigator
-                screenOptions={{
-                    tabBarShowLabel: false,
-                    tabBarActiveTintColor: THEME_COLOR_4[theme],
-                    tabBarInactiveTintColor: FONT_COLOR[theme],
-                    tabBarStyle: {
-                        backgroundColor: THEME_COLOR_0[theme],
-                        height: TAB_BAR_HEIGHT,
-                        borderTopColor: 'transparent'
-                    }
-                }}
-            >
-                <Tab.Screen
-                    name='Passwords'
-                    component={PasswordsScreen}
-                    options={{
-                        tabBarIcon: ({ color, size }) => (
-                            <AntDesign name='unlock' color={color} size={size} />
-                        ),
-                        headerShown: false
-                    }}
+        <NavigationContainer
+            independent={true}
+        >
+            <Stack.Navigator>
+                <Stack.Screen
+                    name='Login'
+                    component={LoginScreen}
+                    options={{ headerShown: false }}
                 />
-                <Tab.Screen
-                    name='New Password'
-                    component={AddPasswordScreen}
-                    options={{
-                        tabBarIcon: ({ color, size }) => (
-                            <AntDesign name='plus' color={color} size={size} />
-                        ),
-                        headerShown: false
-                    }}
+                <Stack.Screen
+                    name='Main'
+                    component={MainScreen}
+                    options={{ headerShown: false }}
                 />
-                <Tab.Screen
-                    name='Settings'
-                    component={SettingsScreen}
-                    options={{
-                        tabBarIcon: ({ color, size }) => (
-                            <AntDesign name='setting' color={color} size={size} />
-                        ),
-                        headerShown: false
-                    }}
-                />
-            </Tab.Navigator>
-            <StatusBar></StatusBar>
+            </Stack.Navigator>
         </NavigationContainer>
     );
 }
