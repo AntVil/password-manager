@@ -21,6 +21,7 @@ export default function AddPasswordScreen(props) {
 
 const styles = StyleSheet.create({
     root: {
+        flex:1,
         paddingTop: Constants.statusBarHeight,
         flexDirection: 'column',
         justifyContent: 'space-between',
