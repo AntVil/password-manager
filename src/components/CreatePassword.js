@@ -18,16 +18,16 @@ export default function CreatePassword(props) {
 
 const styles = StyleSheet.create({
     container: {
-        width: BUTTON_SIZE,
-        height: BUTTON_SIZE,
+        maxHeight: BUTTON_SIZE,
         marginHorizontal: (WINDOW_WIDTH - BUTTON_SIZE) / 2
     },
     button: {
-        width: BUTTON_SIZE,
-        height: BUTTON_SIZE,
+        maxWidth: BUTTON_SIZE,
+        maxHeight: BUTTON_SIZE,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#333',
         borderRadius: BUTTON_SIZE / 2,
+        aspectRatio: 1
     }
 });

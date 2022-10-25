@@ -3,7 +3,7 @@ import Constants from 'expo-constants';
 
 import PasswordInfo from '../components/PasswordInfo';
 import CreatePassword from '../components/CreatePassword';
-import { THEME_COLOR_0, THEME_COLOR_1 } from '../constants';
+import { TAB_BAR_HEIGHT, THEME_COLOR_0, THEME_COLOR_1 } from '../constants';
 
 const WINDOW_HEIGHT = Dimensions.get('window').height;
 
@@ -24,10 +24,11 @@ const styles = StyleSheet.create({
         paddingTop: Constants.statusBarHeight,
         flexDirection: 'column',
         justifyContent: 'space-between',
-        height: WINDOW_HEIGHT - Constants.statusBarHeight
+        height: WINDOW_HEIGHT - TAB_BAR_HEIGHT
     },
     button: {
         flex: 1,
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginVertical: 10
     }
 });
