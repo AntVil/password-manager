@@ -1,9 +1,9 @@
-import { Text, Image, StyleSheet, Dimensions, View, useColorScheme } from 'react-native';
+import { Image, StyleSheet, Dimensions, View, useColorScheme, TextInput } from 'react-native';
 
 const WINDOW_WIDTH = Dimensions.get('window').width;
 const ICON_SIZE = WINDOW_WIDTH / 2;
 
-export default function PasswordInfo(props) {
+export default function PasswordEditInfo(props) {
     const theme = useColorScheme()
 
     return (
@@ -14,8 +14,8 @@ export default function PasswordInfo(props) {
                     uri: 'https://reactnative.dev/img/tiny_logo.png'
                 }}
             />
-            <Text style={styles.title}>Item</Text>
-            <Text style={styles.label}>Label</Text>
+            <TextInput style={styles.title} onChangeText={(s) => console.log(`Item text ${s}`)}>Item</TextInput>
+            <TextInput style={styles.label} onChangeText={(s) => console.log(`Item text ${s}`)}>Label</TextInput>
         </View>
     );
 }

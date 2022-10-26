@@ -2,7 +2,7 @@ import { StyleSheet, View, Dimensions, Pressable, useColorScheme } from 'react-n
 import Constants from 'expo-constants';
 import { AntDesign } from '@expo/vector-icons';
 
-import PasswordInfo from '../components/PasswordInfo';
+import PasswordEditInfo from '../components/PasswordEditInfo';
 import PasswordSettings from '../components/PasswordSettings';
 
 import { THEME_COLOR_0, THEME_COLOR_1 } from '../constants';
@@ -14,12 +14,12 @@ export default function PasswordEditScreen(props) {
 
     return (
         <View style={{...styles.root, backgroundColor: THEME_COLOR_1[theme]}}>
-            <View style={{...styles.topContainer, backgroundColor: THEME_COLOR_0[theme]}}>
+            <View style={{...styles.topContainer}}>
                 <Pressable onPress={() => props.navigation.goBack()}>
                     <AntDesign name='arrowleft' size={40} color='#000' />
                 </Pressable>
 
-                <PasswordInfo></PasswordInfo>
+                <PasswordEditInfo></PasswordEditInfo>
 
                 <Pressable onPress={() => console.log('edit')}>
                     <AntDesign name='save' size={40} color='#000' />

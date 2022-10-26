@@ -1,7 +1,7 @@
 import { StyleSheet, View, Dimensions, useColorScheme } from 'react-native';
 import Constants from 'expo-constants';
 
-import PasswordInfo from '../components/PasswordInfo';
+import PasswordEditInfo from '../components/PasswordEditInfo';
 import CreatePassword from '../components/CreatePassword';
 import { TAB_BAR_HEIGHT, THEME_COLOR_0, THEME_COLOR_1 } from '../constants';
 
@@ -12,7 +12,7 @@ export default function AddPasswordScreen(props) {
 
     return (
         <View style={{...styles.root, backgroundColor: THEME_COLOR_1[theme]}}>
-            <PasswordInfo></PasswordInfo>
+            <PasswordEditInfo></PasswordEditInfo>
             
             <CreatePassword style={styles.button}></CreatePassword>
         </View>
