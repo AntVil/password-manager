@@ -1,22 +1,25 @@
+import { useState } from 'react';
 import { StyleSheet, Text, View, Dimensions, useColorScheme } from 'react-native';
 import Constants from 'expo-constants';
 
 import PasswordList from '../components/PasswordList';
 import PasswordListSorter from '../components/PasswordListSorter';
+import PasswordStorage from '../components/PasswordStorage';
 
 import { THEME_COLOR_0, THEME_COLOR_1 } from '../constants';
 
 const WINDOW_WIDTH = Dimensions.get('window').width;
 const SORTER_MARGIN = 10;
 const SORTER_WIDTH = 100;
-const passwords = [
-    { id: 0, name: 'Item 0', label: 'label 0' },
-    { id: 1, name: 'Item 1', label: 'label 1' },
-    { id: 2, name: 'The very long item 2', label: 'very long label' }
-];
 
 export default function PasswordListScreen(props) {
     const theme = useColorScheme();
+
+    const [passwords, setPasswords] = useState([]);
+    
+    PasswordStorage.getPasswords().then(
+        (p) => setPasswords(p)
+    )
 
     return (
         <View style={{...styles.root, backgroundColor: THEME_COLOR_1[theme]}}>
