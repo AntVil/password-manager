@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Dimensions, useColorScheme } from 'react-native';
 import Constants from 'expo-constants';
 
@@ -16,10 +16,12 @@ export default function PasswordListScreen(props) {
     const theme = useColorScheme();
 
     const [passwords, setPasswords] = useState([]);
-    
-    PasswordStorage.getPasswords().then(
-        (p) => setPasswords(p)
-    )
+
+    useEffect(() => {
+        PasswordStorage.getPasswords().then(
+            (p) => setPasswords(p)
+        )
+    }, []);
 
     return (
         <View style={{...styles.root, backgroundColor: THEME_COLOR_1[theme]}}>
